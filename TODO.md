@@ -5,3 +5,6 @@
 - Почитать про MQTT
 - Почитать про SQLite и SQLAlchemy
 - Описать проект в ридми
+
+
+![кортинка](https://scientificrussia.ru/images/b/teb-medium.jpg)
