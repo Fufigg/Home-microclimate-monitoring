@@ -28,5 +28,3 @@ client.username_pw_set(username, password)
 client.connect(broker, port)
 
 client.loop_forever()
-while True:
-    time.sleep(1)
