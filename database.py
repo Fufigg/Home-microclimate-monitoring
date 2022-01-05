@@ -58,7 +58,7 @@ class Humidity(Base):
     def serialize(self) -> dict:
         return {'device': self.device,
                 'time': self.date.strftime(time_format),
-                'value': self.temperature}
+                'value': self.humidity}
 
 
 class CarbonicGas(Base):
@@ -80,7 +80,7 @@ class CarbonicGas(Base):
     def serialize(self) -> dict:
         return {'device': self.device,
                 'time': self.date.strftime(time_format),
-                'value': self.temperature}
+                'value': self.carbonic_gas}
 
 
 class Pressure(Base):
@@ -102,7 +102,7 @@ class Pressure(Base):
     def serialize(self) -> dict:
         return {'device': self.device,
                 'time': self.date.strftime(time_format),
-                'value': self.temperature}
+                'value': self.pressure}
 
 
 # Создание таблицы
