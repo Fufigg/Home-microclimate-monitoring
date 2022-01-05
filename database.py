@@ -129,6 +129,7 @@ def write_to_database(device_id: str, parameter: str, value: float | int, date: 
         raise ValueError()
     session.add(o)
     session.commit()
+    return o.id
 
 
 def read_last_from_database(parameter: str):

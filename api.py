@@ -23,8 +23,7 @@ def write_value(parameter):
             value = request_data["value"]
             device = request_data["device"]
             time = datetime.strptime(request_data.get('time', None), config.time_format)
-            database.write_to_database(device, parameter, value, time)
-            return {}, 200
+            return {"id": database.write_to_database(device, parameter, value, time)}, 200
         else:
             return {'error': 'invalid request'}, 400
 
@@ -39,10 +38,11 @@ def write_values():
             device = request_data["device"]
             time = datetime.strptime(request_data.get('time', None), config.time_format)
             values = request_data['values']
+            json = {}
             for parameter in values:
                 value = values[parameter]
-                database.write_to_database(device, parameter, value, time)
-            return {}, 200
+                json[parameter] = database.write_to_database(device, parameter, value, time)
+            return json, 200
         else:
             return {'error': 'invalid request'}, 400
 
